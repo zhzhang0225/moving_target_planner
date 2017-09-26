@@ -15,8 +15,8 @@ for mind = 1:movetime
         newx = targetpos(1) + dX(dir);
         newy = targetpos(2) + dY(dir);
 
-        xdisc = fix(newx / res);
-        ydisc = fix(newy / res);
+        xdisc = fix(newx / res + 0.5);
+        ydisc = fix(newy / res + 0.5);
         if (xdisc >= 1 & xdisc <= size(envmap, 1) & ydisc >= 1 & ydisc <= size(envmap, 2))
             dist = sqrt((newx-basepos(1))^2 + (newy-basepos(2))^2);
             if (envmap(xdisc, ydisc) == 0 & dist > maxdist)                
