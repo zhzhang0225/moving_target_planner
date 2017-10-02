@@ -28,6 +28,5 @@ Start     Goal
 *More complex heuristics (such as using the cost from target using BFS) and higher dimensional search space were also prototyped and attempted. However, the algorithm with the above integrated can in no way outperform the original (simpler) version.  
 
 Author: Zihao Theo Zhang
-AndrewID: zihaoz1
 
 
