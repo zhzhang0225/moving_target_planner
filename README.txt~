@@ -3,7 +3,7 @@ The planner takes advantage of a modified Weighted A* algorithm to catch moving 
 
 If a complete, valid path has been generated during one call to the planner function using the Weighted A*, the plan (stored in a map) can be always re-used in the following calls to the planner function. The plan will be re-computed/ updated when: 
 
-1.the robot gets closer than some threshold (set as 5 currently) to the moving target 
+1.the robot gets closer than some threshold (set as 5 currently) to the moving target  OR
 2.the robot does not make large enough move during consecutive steps. 
 
 This again provides the algorithm with more computational efficiency. 
@@ -24,9 +24,5 @@ Start     Goal
 [70  80 0] [85 170 0] map1
 [15  44 0] [167 59 0] map1
 [146 72 0] [167 78 0] map1  
-
-*More complex heuristics (such as using the cost from target using BFS) and higher dimensional search space were also prototyped and attempted. However, the algorithm with the above integrated can in no way outperform the original (simpler) version.  
-
-Author: Zihao Theo Zhang
 
 
