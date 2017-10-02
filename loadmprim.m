@@ -32,5 +32,7 @@ for i = 1 : NUMOFDIRS
     end
 end
 
+fclose(fileID);
+
 end
 

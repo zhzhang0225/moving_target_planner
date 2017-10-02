@@ -10,13 +10,20 @@ for i = 1 : size(mprim,3)
     motion(i,:) = newpos;
     
     % check validity
-    gridpos = newpos(1:2) / res + 0.5;
+    %gridpos = newpos(1:2) / res + 0.5;
+    gridpos(1) = (newpos(1)/res) + 0.5;
+    gridpos(2) = (newpos(2)/res) + 0.5;
     if (fix(gridpos(1)) < 1 | fix(gridpos(1)) > size(envmap, 1) | ...
             fix(gridpos(2)) < 1 | fix(gridpos(2)) > size(envmap, 2))
         ret = 0;
         return;
     end
     if ((envmap(fix(gridpos(1)), fix(gridpos(2))) ~= 0))
+        %currentpos = currentpos
+        %dir = dir 
+        %mprim_id = mprim_id
+        %newpos = newpos
+        %gridpos = gridpos
         ret = 0;
         return;
     end

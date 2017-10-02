@@ -1,6 +1,6 @@
 function[mprim_id] = robotplanner(envmap, res, robotpos, targetpos, mprim);
 
-MEX = 0;
+MEX = 1;
 
 %failed to find an acceptable move
 mprim_id = 1;   %arbitrary move

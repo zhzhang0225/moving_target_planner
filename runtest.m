@@ -48,10 +48,15 @@ for i = 1:2000
     
     %get direction index for robotpos w.r.t the motion primitives
     normalized_angle = wrapTo2Pi(robotpos(3));
-    dir = fix(normalized_angle / (2*pi / num_angles)) + 1;
+    dir = fix(normalized_angle / (2*pi / num_angles) + 0.5) + 1;
     if (dir == 9)
       dir = 1;
     end;
+    
+%     if (robotpos(3) < 0)
+%       dir = dir + 1;
+%     end;
+    
     [ret, motion] = applyaction(envmap, res, robotpos, mprim, dir, mprim_id);
     newrobotpos = motion(end,:);
     if (ret ~= 1)
@@ -65,7 +70,7 @@ for i = 1:2000
     %call target planner to see how they move within the robot planning
     %time
     newtargetpos = targetplanner(envmap, res, robotpos, targetpos, targetstart, movetime);
-       
+    
     %make the moves
     robotpos = newrobotpos;
     targetpos = newtargetpos;
